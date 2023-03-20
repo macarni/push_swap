@@ -6,7 +6,7 @@
 #    By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 13:52:47 by adrperez          #+#    #+#              #
-#    Updated: 2023/03/20 15:51:08 by adrperez         ###   ########.fr        #
+#    Updated: 2023/03/20 16:22:21 by adrperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ NAME		= 	push_swap
 SRCS		= 	src/push_swap.c \
 			 	src/swap.c \
 			 	src/push.c \
+			 	src/rotate.c \
+			 	src/lists.c \
 				utils/ft_atoi.c \
 				
 OBJS		= 	$(SRCS:.c=.o)

@@ -6,26 +6,11 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:58:53 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/20 15:56:14 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:53:53 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-static void	ft_lstadd_back(t_node **lst, t_node *new)
-{
-	t_node *aux;
-
-	aux = *lst;
-	if (aux)
-	{
-		while (aux->next)
-			aux = aux->next;
-		aux->next = new;
-	}
-	else
-		*lst = new;
-}
 
 int	main(int argc, char **argv)
 {
@@ -87,24 +72,42 @@ int	main(int argc, char **argv)
 	// }
 
 	//push a
-	push(stack_a, stack_b);
-	printf("Después de push(stack_b, stack_a) \n");
-	printf("Stack_a: \n");
+	// push(stack_a, stack_b);
+	// printf("Después de push(stack_b, stack_a) \n");
+	// printf("Stack_a: \n");
+	// aux = *stack_a;
+	// while(aux)
+	// {
+	// 	printf("%d\n", aux->content);
+	// 	aux = aux->next;
+	// }
+	// printf("Stack_b: \n");
+	// aux = *stack_b;
+	// while(aux)
+	// {
+	// 	printf("%d\n", aux->content);
+	// 	aux = aux->next;
+	// }
+	
+	//rotate a
+	// rotate(stack_a);
+	// printf("Después de rotate(stack_a): \n");
+	// aux = *stack_a;
+	// while(aux)
+	// {
+	// 	printf("%d\n", aux->content);
+	// 	aux = aux->next;
+	// }
+
+	//rotate_reverse a
+	rotate_reverse(stack_a);
+	printf("Después de rotate_reverse(stack_a): \n");
 	aux = *stack_a;
 	while(aux)
 	{
 		printf("%d\n", aux->content);
 		aux = aux->next;
 	}
-	printf("Stack_b: \n");
-	aux = *stack_b;
-	while(aux)
-	{
-		printf("%d\n", aux->content);
-		aux = aux->next;
-	}
-
-
 	
 	return (0);
 }
