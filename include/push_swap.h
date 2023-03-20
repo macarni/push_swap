@@ -24,6 +24,7 @@ typedef struct node
 
 int		main(int argc, char **argv);
 int		ft_atoi(const char *str);
-void	swap_a(t_node **lst);
+void	swap(t_node **lst);
+void	push(t_node **stack_a, t_node **stack_b);
 
 #endif
