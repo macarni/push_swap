@@ -33,5 +33,6 @@ void	ft_lstadd_front(t_node **lst, t_node *new);
 void	rotate_rr(t_node **stack_a, t_node **stack_b);
 void	rotate_reverse(t_node **stack);
 void	reverse_rr(t_node **stack_a, t_node **stack_b);
+t_node	*ft_last(t_node *lst);
 
 #endif

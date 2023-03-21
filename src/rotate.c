@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:01:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/20 17:02:47 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:14:13 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,17 @@ void	rotate(t_node **stack)
 	free(first);
 }
 
-void	rotate_reverse(t_node **stack) //arreglar rotate_reverse, not working, hace falta poner un 0 a final de la lista después de haber recogido el ultimo nodo
+void	rotate_reverse(t_node **stack)
 {
 	t_node	*aux;
 	t_node	*last;
-	t_node	*aux2;
 
 	aux = *stack;
-	aux2 = *stack;
-	while(aux->next && aux2->next)
-	{
-		aux = aux->next; //guardo el ultimmo
-		aux2 = aux2->next;
-	}
-	last = ft_lstnew(aux->content);
-	aux2->next = 0;
+	while(aux->next && aux->next->next)
+		aux = aux->next; //me guardo el penúltimo
+	last = ft_last(*stack); //busco el ultimo antes de eliminarlo
+	aux->next = 0; //le añado un cero al ultimo
 	ft_lstadd_front(stack, last);
-	free(aux);
 }
 
 void	rotate_rr(t_node **stack_a, t_node **stack_b)

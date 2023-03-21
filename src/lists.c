@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/20 16:27:20 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:05:11 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,12 @@ t_node	*ft_lstnew(int content)
 	return (new_node);
 }
 
+t_node	*ft_last(t_node *lst)
+{
+	t_node *aux;
+
+	aux = lst;
+	while (aux->next)
+		aux = aux->next;
+	return(aux); 
+}
