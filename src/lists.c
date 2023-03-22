@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/21 16:05:11 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:47:54 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 		aux->next = new;
 	}
 	else
-	{
-		printf("entro");
 		*lst = new;
-	}
 }
 
 void	ft_lstadd_front(t_node **lst, t_node *new)
@@ -56,4 +53,21 @@ t_node	*ft_last(t_node *lst)
 	while (aux->next)
 		aux = aux->next;
 	return(aux); 
+}
+
+int	ft_lstsize(t_node *lst)
+{
+	int		size;
+	t_node	*aux;
+
+	aux = lst;
+	size = 1;
+	if (!lst)
+		return (0);
+	while (aux->next != 0)
+	{
+		size++;
+		aux = aux->next;
+	}
+	return (size);
 }

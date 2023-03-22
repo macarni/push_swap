@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../utils/ft_printf/ft_printf.h"
 
 typedef struct node
 {
@@ -34,5 +35,13 @@ void	rotate_rr(t_node **stack_a, t_node **stack_b);
 void	rotate_reverse(t_node **stack);
 void	reverse_rr(t_node **stack_a, t_node **stack_b);
 t_node	*ft_last(t_node *lst);
+char	**ft_split(char const *s, char c);
+int		create_args(char **argv, t_node	**stack_a);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *s);
+int		ft_isdigit(int c);
+int		is_sorted(t_node *stack_a);
+int		has_duplicates(t_node *stack_a);
+int		ft_lstsize(t_node *lst);
 
 #endif
