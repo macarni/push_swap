@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:01:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/24 17:26:22 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:19:13 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	rotate(t_node **stack, char *msg)
 	free(first);
 }
 
-void	rotate_reverse(t_node **stack)
+void	rotate_reverse(t_node **stack, char *msg)
 {
 	t_node	*aux;
 	t_node	*last;
@@ -46,6 +46,7 @@ void	rotate_reverse(t_node **stack)
 	last = ft_last(*stack); //busco el ultimo antes de eliminarlo
 	aux->next = 0; //le añado un cero al ultimo
 	ft_lstadd_front(stack, last);
+	ft_printf("%s\n", msg);
 }
 
 void	rotate_rr(t_node **stack_a, t_node **stack_b)
@@ -56,6 +57,6 @@ void	rotate_rr(t_node **stack_a, t_node **stack_b)
 
 void	reverse_rr(t_node **stack_a, t_node **stack_b)
 {
-	rotate_reverse(stack_a);
-	rotate_reverse(stack_b);
+	rotate_reverse(stack_a, "");
+	rotate_reverse(stack_b, "");
 }

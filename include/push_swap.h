@@ -25,14 +25,14 @@ typedef struct node
 
 int		main(int argc, char **argv);
 int		ft_atoi(const char *str);
-void	swap(t_node **lst);
-void	push(t_node **stack_a, t_node **stack_b);
+void	swap(t_node **lst, char *msg);
+void	push(t_node **to, t_node **from, char *msg);
 void	rotate(t_node **stack, char *msg);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 t_node	*ft_lstnew(int content);
 void	ft_lstadd_front(t_node **lst, t_node *new);
 void	rotate_rr(t_node **stack_a, t_node **stack_b);
-void	rotate_reverse(t_node **stack);
+void	rotate_reverse(t_node **stack, char *msg);
 void	reverse_rr(t_node **stack_a, t_node **stack_b);
 t_node	*ft_last(t_node *lst);
 char	**ft_split(char const *s, char c);

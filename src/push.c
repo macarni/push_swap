@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 13:59:59 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/20 16:22:33 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/24 18:13:16 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * push b - toma el primer elemento del stack a y lo pone encima del stack b. No hace nada si a está vacío.
  */
 
-void	push(t_node **to, t_node **from)
+void	push(t_node **to, t_node **from, char *msg)
 {
 	t_node	*first;
 	t_node	*aux;
@@ -29,5 +29,6 @@ void	push(t_node **to, t_node **from)
 		ft_lstadd_front(to, first);
 		*from = aux; 
 	}
+	ft_printf("%s\n", msg);
 }
 
