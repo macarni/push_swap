@@ -27,7 +27,7 @@ int		main(int argc, char **argv);
 int		ft_atoi(const char *str);
 void	swap(t_node **lst);
 void	push(t_node **stack_a, t_node **stack_b);
-void	rotate(t_node **stack);
+void	rotate(t_node **stack, char *msg);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 t_node	*ft_lstnew(int content);
 void	ft_lstadd_front(t_node **lst, t_node *new);
@@ -43,5 +43,7 @@ int		ft_isdigit(int c);
 int		is_sorted(t_node *stack_a);
 int		has_duplicates(t_node *stack_a);
 int		ft_lstsize(t_node *lst);
+void	ft_freelist(t_node **stack_a);
+void	sort_tiny_stack(int	size, t_node **stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 13:52:47 by adrperez          #+#    #+#              #
-#    Updated: 2023/03/22 18:42:09 by adrperez         ###   ########.fr        #
+#    Updated: 2023/03/24 17:23:39 by adrperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS		= 	src/push_swap.c \
 			 	src/rotate.c \
 			 	src/lists.c \
 			 	src/args.c \
+			 	src/tiny_stack.c \
 				utils/ft_atoi.c \
 				utils/ft_split.c \
 				utils/ft_strlcpy.c \
@@ -32,7 +33,7 @@ OBJS		= 	$(SRCS:.c=.o)
 
 #Compilation
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror -g  -g3 -fsanitize=address
 
 #Include
 INC			= ./include

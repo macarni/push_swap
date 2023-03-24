@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:19:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/22 18:55:41 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/24 16:34:40 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,19 @@ int	has_duplicates(t_node *stack_a)
 	return (0);
 }
 
+static void free_matrix(char **matrix)
+{
+	int i;
+
+	i = 0;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+}
+
 int	create_args(char **argv, t_node	**stack_a)
 {
 	char	**args;
@@ -102,6 +115,7 @@ int	create_args(char **argv, t_node	**stack_a)
 			new_node->next = 0;
 			ft_lstadd_back(stack_a, new_node);
 		}
+		free_matrix(args);
 	}
 	return (1);
 }

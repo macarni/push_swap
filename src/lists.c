@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/22 18:47:54 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:44:09 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,25 @@ int	ft_lstsize(t_node *lst)
 	}
 	return (size);
 }
+
+
+void	ft_freelist(t_node **stack_a)
+{
+	t_node	*aux;
+
+	aux = *stack_a;
+	while (*stack_a)
+	{
+		aux = (*stack_a)->next;
+		free(*stack_a);
+		*stack_a = aux;
+	}
+	free(stack_a);
+}
+
+
+// function(*n)
+// while(stack_a)
+// struct node* aux = n;
+// free( stack_a );
+// stack_a = aux->next;
