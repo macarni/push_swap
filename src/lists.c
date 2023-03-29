@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/24 17:44:09 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/29 21:03:00 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,42 @@ void	ft_freelist(t_node **stack_a)
 	free(stack_a);
 }
 
+int	is_sorted(t_node *stack_a)
+{
+	t_node	*aux;
+
+	aux = stack_a;
+	while (aux->next)
+	{
+		if(aux->content > aux->next->content)
+			return (0);
+		aux = aux->next;
+	}
+	return (1);
+}
+
+// void	map_indexes(t_node *stack_a)
+// {
+// 	int		num;
+// 	t_node	*aux;
+// 	t_node	*aux2;
+
+// 	num = 0;
+// 	aux = stack_a;
+// 	aux2 = stack_a;
+// 	while (aux)
+// 	{
+// 		num = aux->content;
+// 		while(aux2)
+// 		{
+// 			if (num != aux2->content && num >= aux2->content)
+// 				aux->index++;
+// 			aux2 = aux2->next;
+// 		}
+// 		aux = aux->next;
+// 	}
+
+// }
 
 // function(*n)
 // while(stack_a)

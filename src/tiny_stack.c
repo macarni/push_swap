@@ -6,11 +6,20 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:12:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/24 18:33:27 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/29 21:05:23 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/**
+ * 3 numbers -> 1 or 2 movements
+ * 5 numbers -> max 12 movements
+ * 100 numbers -> max 1500
+ * 500 -> max 11500
+ * 
+ * @param stack_a 
+ */
 
 static void	sort_three(t_node **stack_a)
 {
@@ -45,10 +54,12 @@ static void	sort_five(t_node **stack_a)
 
 	stack_b = malloc(sizeof(t_node*));
 	*stack_b = 0;
+	//TODO SEGUIR POR AQUI: Creo que la mejor opcion es encontrar los dos numeros másmequeños y pasar esos numerso al stack b, ordenar esos tres numeros del stack a, y luego pasar los del stack b, desppues de ordenarlos, al principio del stack a -> si lo  hago de esta manera, quitar el index del struct
+	//TODO Para el radix https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
 	push(stack_b, stack_a, "pb");
 	push(stack_b, stack_a, "pb");
-	sort_three(stack_a);
-	//Esto no funsiona, de aqui pabajo arreglar
+	if (!is_sorted(*stack_a))
+		sort_three(stack_a);
 	push(stack_a, stack_b, "pa");
 	rotate(stack_a, "ra");
 	push(stack_a, stack_b, "pa");

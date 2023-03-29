@@ -19,7 +19,10 @@
 
 typedef struct node
 {
-	int			content;
+	long long	content;
+	int			is_min;
+	int			is_max;
+	int			index;
 	struct node	*next;
 }	t_node;
 
@@ -45,5 +48,6 @@ int		has_duplicates(t_node *stack_a);
 int		ft_lstsize(t_node *lst);
 void	ft_freelist(t_node **stack_a);
 void	sort_tiny_stack(int	size, t_node **stack_a);
+void	map_indexes(t_node *stack_a);
 
 #endif

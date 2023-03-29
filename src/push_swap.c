@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:58:53 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/24 17:44:20 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/29 20:05:41 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	t_node	*aux;
 	int		stack_size;
 	
+	stack_a = 0;
 	if (argc > 1)
 	{
 		stack_a = malloc(sizeof(t_node*));
@@ -30,15 +31,14 @@ int	main(int argc, char **argv)
 			ft_freelist(stack_a);
 			return (0);
 		}
-		
 		stack_size = ft_lstsize(*stack_a);
 		if(stack_size <= 5)
 			sort_tiny_stack(stack_size, stack_a);
 		aux = *stack_a;
-		printf("Stack_a: ");
 		while(aux)
 		{
-			printf("%d ", aux->content);
+			printf("Content: %lld ", aux->content);
+			printf("Index: %d \n", aux->index);
 			aux = aux->next;
 		}
 	}

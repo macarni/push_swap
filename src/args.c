@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:19:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/24 16:34:40 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:50:10 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,6 @@ static	int	check_ifdigits(char *argv)
 			ft_printf("Error\n");
 			return (0);
 		}
-	}
-	return (1);
-}
-
-int	is_sorted(t_node *stack_a)
-{
-	t_node	*aux;
-
-	aux = stack_a;
-	while (aux->next)
-	{
-		if(aux->content > aux->next->content)
-			return (0);
-		aux = aux->next;
 	}
 	return (1);
 }
@@ -97,7 +83,7 @@ int	create_args(char **argv, t_node	**stack_a)
 	int		j;
 
 	i = 1;
-	while(argv[i])
+	while(argv && argv[i])
 	{
 		if (!ft_strlen(argv[i]))
 		{	
@@ -106,7 +92,7 @@ int	create_args(char **argv, t_node	**stack_a)
 		}
 		args = ft_split(argv[i++], ' ');
 		j = 0;
-		while(args[j])
+		while(args && args[j])
 		{		
 			new_node = malloc(sizeof(t_node));
 			if(!check_ifdigits(args[j]))
@@ -117,5 +103,6 @@ int	create_args(char **argv, t_node	**stack_a)
 		}
 		free_matrix(args);
 	}
+	map_indexes(*stack_a);
 	return (1);
 }
