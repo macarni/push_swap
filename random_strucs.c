@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:23:34 by alaparic          #+#    #+#             */
-/*   Updated: 2023/03/24 18:27:13 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:35:41 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	main(int argc, char **argv)
 {
 	int	*nums;
 
+	(void)argc;
 	nums = random_stack(atoi(argv[1]));
 	while (*nums)
 	{

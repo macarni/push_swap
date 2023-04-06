@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/29 21:03:00 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:22:14 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,44 @@ int	is_sorted(t_node *stack_a)
 		aux = aux->next;
 	}
 	return (1);
+}
+
+//TODO Error aqui, don't know why
+int	get_min_position(t_node *stack_a)
+{
+	int		index;
+	int 	min;
+	int		position;
+	t_node	*aux;
+
+	aux = stack_a;
+	min = aux->content;
+	index = -1;
+	position = 0;
+	while(aux)
+	{
+		index++;
+		if (min > aux->content)
+		{
+			min = aux->content;
+			position = index;
+		}
+		aux = aux->next;
+	}
+	return (position);
+}
+
+//TODO borrar funcion
+void print_list(t_node *stack_a)
+{
+	t_node	*aux;
+	
+	aux = stack_a;
+	while(aux)
+	{
+		printf("%lld ", aux->content);
+		aux = aux->next;
+	}
 }
 
 // void	map_indexes(t_node *stack_a)

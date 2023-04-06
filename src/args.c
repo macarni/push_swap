@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:19:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/03/29 19:50:10 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:55:15 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ int	create_args(char **argv, t_node	**stack_a)
 		}
 		free_matrix(args);
 	}
-	map_indexes(*stack_a);
+	//map_indexes(*stack_a);
 	return (1);
 }

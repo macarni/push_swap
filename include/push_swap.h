@@ -49,5 +49,7 @@ int		ft_lstsize(t_node *lst);
 void	ft_freelist(t_node **stack_a);
 void	sort_tiny_stack(int	size, t_node **stack_a);
 void	map_indexes(t_node *stack_a);
+int		get_min_position(t_node *stack_a);
+void 	print_list(t_node *stack_a);
 
 #endif
