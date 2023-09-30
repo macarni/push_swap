@@ -6,13 +6,15 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:58:53 by adrperez          #+#    #+#             */
-/*   Updated: 2023/04/06 20:42:50 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:32:24 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 //TODO Para el radix https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
+//TODO Info de Bri: https://picayune-piper-447.notion.site/Push_swap-bbeltran-07463a2c9f8349e5bcaf616a0160a447
+//TODO funciona con 5 numeros, pasar ahora a radix
 
 int	main(int argc, char **argv)
 {

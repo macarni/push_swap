@@ -6,7 +6,7 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:19:30 by adrperez          #+#    #+#             */
-/*   Updated: 2023/04/06 19:55:15 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:34:03 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,17 @@ static void free_matrix(char **matrix)
 	free(matrix);
 }
 
+/**
+ * The function `create_args` takes command line arguments and creates a stack of nodes, where each
+ * node contains an integer value.
+ * 
+ * @param argv A pointer to an array of strings, where each string represents a command-line argument.
+ * @param stack_a The parameter `stack_a` is a pointer to a pointer to a `t_node` struct. It is used to
+ * store a linked list of nodes, where each node contains an integer value (`content`) and a pointer to
+ * the next node (`next`).
+ * 
+ * @return The function `create_args` is returning an integer value.
+ */
 int	create_args(char **argv, t_node	**stack_a)
 {
 	char	**args;
@@ -103,6 +114,6 @@ int	create_args(char **argv, t_node	**stack_a)
 		}
 		free_matrix(args);
 	}
-	//map_indexes(*stack_a);
+	//map_ x indexes(*stack_a);
 	return (1);
 }

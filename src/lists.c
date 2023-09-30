@@ -6,12 +6,19 @@
 /*   By: adrperez <adrperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:21:58 by adrperez          #+#    #+#             */
-/*   Updated: 2023/04/06 21:22:14 by adrperez         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:36:21 by adrperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/**
+ * The function `ft_lstadd_back` adds a new node to the end of a linked list.
+ * 
+ * @param lst A pointer to a pointer to the head of a linked list.
+ * @param new The "new" parameter is a pointer to a t_node structure that represents the new node to be
+ * added to the end of the linked list.
+ */
 void	ft_lstadd_back(t_node **lst, t_node *new)
 {
 	t_node *aux;
@@ -27,12 +34,28 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 		*lst = new;
 }
 
+/**
+ * The function `ft_lstadd_front` adds a new node to the front of a linked list.
+ * 
+ * @param lst A pointer to a pointer to a t_node struct. This is a pointer to the head of the linked
+ * list.
+ * @param new The "new" parameter is a pointer to a node that we want to add to the front of the linked
+ * list.
+ */
 void	ft_lstadd_front(t_node **lst, t_node *new)
 {
 	new->next = *lst;
 	*lst = new;
 }
 
+/**
+ * The function `ft_lstnew` creates a new node for a linked list with the given content.
+ * 
+ * @param content The "content" parameter is an integer value that represents the data to be stored in
+ * the new node of the linked list.
+ * 
+ * @return a pointer to a newly created t_node structure.
+ */
 t_node	*ft_lstnew(int content)
 {
 	t_node	*new_node;
@@ -137,6 +160,7 @@ void print_list(t_node *stack_a)
 		printf("%lld ", aux->content);
 		aux = aux->next;
 	}
+	printf("\n");
 }
 
 // void	map_indexes(t_node *stack_a)
